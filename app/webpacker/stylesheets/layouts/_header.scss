@@ -31,7 +31,7 @@
     }
 
     .first {
-      // background-image: url('images/');
+      background-image: url('images/logo.svg');
       background-repeat: no-repeat;
       background-position: center;
       background-size: 60px;
@@ -42,7 +42,7 @@
     }
 
     .second {
-      // background-image: url('images/');
+      background-image: url('images/logo.svg');
       background-repeat: no-repeat;
       background-position: left center;
       background-size: contain;
@@ -66,7 +66,7 @@
   .menu a {
     color: $black;
     font-size: 0.8rem;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: 0.1rem;
     padding: 0;
     text-transform: uppercase;
@@ -135,10 +135,6 @@
     font-size: rem-calc(18px);
     line-height: 1;
   }
-}
-
-.top-bar {
-  border-bottom: 1px solid #e73c8433;
 }
 
 .top-bar .top-bar-right {

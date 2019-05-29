@@ -18,7 +18,8 @@ import 'images/facebook.svg';
 import 'images/instagram.svg';
 import 'images/facebook-white.svg';
 import 'images/instagram-white.svg';
-
+import 'images/logo.svg';
+import 'images/footer-logo.svg';
 
 Rails.start();
 Turbolinks.start();

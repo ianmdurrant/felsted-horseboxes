@@ -1,30 +1,40 @@
 <% footer_menu = Spina::Navigation.find_by(name: 'footer_menu') %>
-<% footer_services = Spina::Navigation.find_by(name: 'footer_services') %>
+
+<div class="content prefooter">
+  <div class="grid-container">
+    <div class="grid-x row align-center">
+      <div class="cell medium-8 text-center">
+        <h2>Get a quote today</h2>
+        <%= link_to 'Contact Us', '/contact-us', class: 'button green' %>
+      </div>
+    </div>
+  </div>
+</div>
 
 <footer class="footer">
   <div class="grid-container">
-    <div class="grid-x grid-padding-x grid-padding-y align-middle">
-      <div class="cell medium-3 text-left">
+    <div class="grid-x grid-margin-y align-center-middle">
+      <div class="cell small-10 text-center">
         <%= link_to (image_pack_tag 'footer-logo.svg'), spina.root_path, class: 'footer-logo' %>
-        <h4>Cleaning services</h4>
-        <ul class="footer_services menu vertical">
-        <% footer_services.navigation_items.roots.sorted.each do |nav_item| %>
-          <li><%= link_to nav_item.menu_title, nav_item.materialized_path %></li>
-        <% end %>
-        </ul>
       </div>
-      <div class="cell medium-6 text-center">
-        <ul class="footer_menu menu vertical">
+      <div class="cell small-10 text-center">
+        <ul class="footer_menu menu horizontal">
         <% footer_menu.navigation_items.roots.sorted.each do |nav_item| %>
           <li><%= link_to nav_item.menu_title, nav_item.materialized_path %></li>
         <% end %>
         </ul>
       </div>
-      <div class="cell medium-3 text-right">
-        <h4>Contact us</h4>
-        <p><a href="tel:<%= current_account.phone %>">T: <%= current_account.phone %></a><br />
-        <a href="mailto:<%= current_account.email %>"><%= current_account.email %></a></p>
-        <p>&copy;<%= Time.now.year %> <%= current_account.name %><br /><%= link_to 'Website by Digital Reflow', 'https://www.digitalreflow.co.uk' %></p>
+      <div class="cell medium-4 text-center">
+        <p class="contacts"><a href="tel:<%= current_account.phone %>">T: <%= current_account.phone %></a><br />
+        <a href="mailto:<%= current_account.email %>">E: <%= current_account.email %></a><br />
+        <%= link_to (image_pack_tag 'facebook-white.svg'), current_account.facebook %>
+        <%= link_to (image_pack_tag 'instagram-white.svg'), current_account.instagram %></p>
+      </div>
+      <div class="cell medium-4 text-center address">
+        <p><%= current_account.address %><br /><%= current_account.city %><br /><%= current_account.postal_code %></p>
+      </div>
+      <div class="cell small-10 text-center">
+        <p class="copyright">&copy;<%= Time.now.year %> <%= current_account.name %>. All rights reserved. Website by <strong><%= link_to 'Digital Reflow', 'https://www.digitalreflow.co.uk' %></strong></p>
       </div>
     </div>
   </div>

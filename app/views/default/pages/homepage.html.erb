@@ -2,107 +2,119 @@
 <%= content_for :page_description, @page.description %>
 <%= content_for :body_classes, "home-page" %>
 
-<div class="banner" style="background-image: url(<%= main_app.url_for(@page.content(:banner).variant(resize: "1280x720")) if content(:banner).present? %>);">
-  <div class="banner__content">
+<% footer_menu = Spina::Navigation.find_by(name: 'footer_menu') %>
+
+<div class="banner grid-x align-center" style="background-image: url(<%= main_app.url_for(@page.content(:banner).variant(resize: "1280x720")) if content(:banner).present? %>);">
+  <div class="banner__content-holder cell large-7">
     <div class="grid-container">
       <div class="grid-x align-center">
-        <div class="cell large-8 text-center">
-          <%= content(:banner_title).try(:html_safe) %>
+        <div class="cell large-12 text-center banner__content">
+          <%= link_to (image_pack_tag 'footer-logo.svg'), spina.root_path, class: 'banner-logo' %><br />
+          <ul class="footer_menu menu horizontal">
+          <% footer_menu.navigation_items.roots.sorted.each do |nav_item| %>
+            <li><%= link_to nav_item.menu_title, nav_item.materialized_path %></li>
+          <% end %>
+          </ul>
+          <br /><div class="downarrow text-center"></div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="content banner-services-grid align-center">
-  <div class="banner-services grid-container align-center text-center">
-    <div class="grid-x row">
-      <div class="cell medium-4 text-center banner-service">
-        <div class="service">Office Spaces</div>
-      </div>
-      <div class="cell medium-4 text-center banner-service">
-        <div class="service">Domestic Cleaning</div>
-      </div>
-      <div class="cell medium-4 text-center banner-service">
-        <div class="service">End of Tenancy Cleaning</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="content">
+<div class="content vehicletype">
   <div class="grid-container">
-    <div class="grid-x grid-padding-x">
-
-      <div class="cell large-6">
-        <%= content(:text).try(:html_safe) %>
+    <div class="grid-x grid-margin-x row align-spaced whichgrid">
+      <div class="cell small-12 medium-4 text-center">
+        <div class="vehicle-image" style="">&nbsp;</div>
+        <h4><%= link_to '3.5 Tonnes', '#' %></h4>
       </div>
-      <div class="cell large-6 content-image" style="background-image: url(<%= main_app.url_for(@page.content(:image).variant(resize: "1280x720")) if content(:image).present? %>);">
-        &nbsp;
+      <div class="cell small-12 medium-4 text-center">
+        <div class="vehicle-image" style="">&nbsp;</div>
+        <h4><%= link_to '6.5 Tonnes', '#' %></h4>
       </div>
-    </div>
-  </div>
-</div>
-
-<div class="content whichservice">
-  <div class="section-header"><h2>WHICH CLEANING SERVICE<br />DO YOU NEED?</h2></div>
-  <div class="grid-container">
-    <div class="grid-x row align-spaced whichgrid">
-      <div class="cell medium-12 large-4 text-center">
-        <div class="service-image" style="">&nbsp;</div>
-        <h4><%= link_to 'commercial cleaning', '/our-services/commercial-cleaning' %></h4>
-        <div class="service-text"><%= content(:commercial_text).try(:html_safe) %></div>
-        <a href="/our-services/commercial-cleaning" class="button pink">Find out more</a>
-      </div>
-      <div class="cell medium-12 large-4 text-center">
-        <div class="service-image" style="">&nbsp;</div>
-        <h4><%= link_to 'domestic cleaning', '/our-services/domestic-cleaning' %></h4>
-        <div class="service-text"><%= content(:domestic_text).try(:html_safe) %></div>
-        <a href="/our-services/domestic-cleaning" class="button pink">Find out more</a>
-      </div>
-      <div class="cell medium-12 large-4 text-center">
-        <div class="service-image" style="">&nbsp;</div>
-        <h4><%= link_to 'end of tenancy', '/our-services/end-of-tenancy' %></h4>
-        <div class="service-text"><%= content(:tenancy_text).try(:html_safe) %></div>
-        <a href="/our-services/end-of-tenancy" class="button pink">Find out more</a>
+      <div class="cell small-12 medium-4 text-center">
+        <div class="vehicle-image" style="">&nbsp;</div>
+        <h4><%= link_to '7.5 Tonnes', '#' %></h4>
       </div>
     </div>
   </div>
 </div>
 
-<div class="content clients">
-  <div class="section-header"><h2>CLIENTS WE'VE WORKED WITH</h2></div>
+<div class="content craftsmanship">
   <div class="grid-container">
     <div class="grid-x align-center">
+      <div class="cell medium-5 grid-x">
+        <div class="cell medium-10 text">
+          <%= content(:text).try(:html_safe) %><br />
+          <%= link_to 'Find out more', '#', class: 'button trans' %>
+        </div>
+      </div>
+      <div class="cell medium-7 image" style="background-image: url(<%= main_app.url_for(@page.content(:image).variant(resize: "1280x720")) if content(:image).present? %>);">
+      </div>
+    </div>
+  </div>
+</div>
 
+<div class="content horseboxes">
+  <div class="grid-container">
+    <div class="grid-x align-center-middle">
+      <div class="cell medium-6 grid-x align-left">
+        <div class="cell medium-10 text-left">
+          <h2>High quality crafted horseboxes</h2>
+          <%= link_to 'Explore Our Horseboxes', '#', class: 'button green' %>
+        </div>
+      </div>
+      <div class="cell medium-6 grid-x align-right">
+        <div class="cell medium-10 text-left">
+          <%= content(:horseboxes_text).try(:html_safe) %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="content testimonials">
-  <div class="section-header"><h2>REVIEWS</h2></div>
   <div class="grid-container">
+    <div class="section-header white"><h2>Testimonials</h2></div>
     <div class="grid-x align-center-middle">
-          <% @page.content(:testimonials).structure_items.sorted_by_structure.first(3).each do |testimonials| %>
-            <div class="cell medium-4 text-center">
-              <blockquote class="testimonial">
-                <cite class="author"><%= testimonials.content(:author) %></cite>
-                <cite class="company"><%= testimonials.content(:company) %></cite>
-                <%= image_pack_tag '5star.svg' %>
-                <%= testimonials.content(:testimonial).try(:html_safe) %>
-              </blockquote>
-            </div>
-          <% end %>
+      <div id="testimonialCarousel" class="owl-carousel testimonial-carousel text-center">
+        <% @page.content(:testimonials).structure_items.sorted_by_structure.limit(6).each do |testimonials| %>
+          <blockquote class="testimonial">
+            <%= testimonials.content(:testimonial).try(:html_safe) %>
+            <cite class="author"><%= testimonials.content(:author) %></cite>
+            <cite class="company"><%= testimonials.content(:company) %></cite>
+          </blockquote>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="content clients">
-  <div class="section-header"><h2>WANT ONE OF OUR SERVICES?</h2></div>
+<div class="content instagram">
   <div class="grid-container">
-    <div class="grid-x row align-center">
+    <div class="grid-x row align-center medium-up-4">
+      <div class="cell text-center">
+        instagram scrape...
+      </div>
+    </div>
+  </div>
+</div>
 
+<div class="content services">
+  <div class="grid-container">
+    <div class="grid-x align-center-middle">
+      <div class="cell medium-6 grid-x align-left">
+        <div class="cell medium-10 text-left">
+          <h2>Our tailored range of services</h2>
+          <%= link_to 'Visit our services', '#', class: 'button green' %>
+        </div>
+      </div>
+      <div class="cell medium-6 grid-x align-right">
+        <div class="cell medium-10 text-left">
+          <%= content(:services_text).try(:html_safe) %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -2,10 +2,10 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: $black;
+  background-color: $light-gray;
   color: $white;
   height: 480px;
-  padding: 3rem 0;
+  padding: 0;
   margin-top: 60px;
   position: relative;
   transition: background-color 0.25s ease-out;
@@ -15,11 +15,11 @@
   }
 
   @include breakpoint(large) {
-    height: 560px;
+    height: 520px;
   }
 
   @include breakpoint(xlarge) {
-    height: 640px;
+    height: 560px;
   }
 
   &.solid {
@@ -41,31 +41,32 @@
     }
   }
 
-  &:before {
-    background: rgba($black, 0.5);
-    bottom: 0;
-    content: '';
-    display: block;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: background-color 0.25s ease-out;
-    width: 100%;
-    z-index: 5;
-  }
-
   &__image {
     display: block;
     height: 100%;
     margin-top: -3rem;
   }
 
-  &__content {
+  &__content-holder {
     @include vertical-center;
+    height: 100%;
     position: relative;
     z-index: 10;
+
+    &:before {
+      background: rgba($black, 0.5);
+      bottom: 0;
+      content: '';
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: background-color 0.25s ease-out;
+      width: 100%;
+      z-index: -1;
+    }
 
     @include breakpoint(medium down) {
       .home-page & {
@@ -144,6 +145,29 @@
       text-transform: uppercase;
     }
   }
+  &__content {
+    @include vertical-center;
+  }
+
+  ul.footer_menu {
+    display: inline-block;
+
+    li {
+      border-left: 1px solid $white;
+      display: inline-block;
+      text-transform: uppercase;
+
+      &:first-child {
+        border: none;
+      }
+    }
+
+    li a {
+      color: $white;
+      font-size: 0.85rem;
+      padding: 0.25rem 0.5rem;
+    }
+  }
 }
 
 .banner--small {
@@ -185,42 +209,18 @@
   }
 }
 
-.content.banner-services-grid {
-  background-color: $light-gray;
-  // border-bottom: 1px solid $black;
-  bottom: 0;
-  padding-bottom: 0;
-  padding-top: 0;
+.banner-logo img {
+  margin-bottom: 1rem;
+  max-width: 320px;
+}
+
+.downarrow {
+  border: solid $white;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  margin-top: 3rem;
+  padding: 12px;
   position: relative;
-  width:100%;
-  z-index: 9;
-}
-
-.banner-services {
-  display: block;
-  max-width: 75rem;
-  width: 100%;
-
-  @include breakpoint(small down) {
-    padding: 1rem 0;
-}
-
-  .banner-service {
-    border-right: 1px solid $black;
-
-    @include breakpoint(small down) {
-      border-right: none;
-
-      .button {
-
-        @include breakpoint(small down) {
-          margin: 0;
-      }
-    }
-  }
-
-    &:last-child {
-      border-right: none;
-    }
-  }
+  transform: rotate(45deg);
+  z-index: 7;
 }

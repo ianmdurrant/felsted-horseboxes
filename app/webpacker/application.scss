@@ -1,6 +1,6 @@
 @charset 'utf-8';
 
-@import url("//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i|Raleway:400,600");
+@import url("//fonts.googleapis.com/css?family=Marcellus");
 @import "./stylesheets/foundation-settings";
 @import "~foundation-sites/scss/foundation";
 
@@ -55,5 +55,22 @@ div.error textarea {
   }
   ul {
     list-style: outside square;
+  }
+}
+
+.page-title {
+  color: $primary-color;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  position: relative;
+
+  &::after {
+    border-bottom: 1px solid $primary-color;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 0;
+    position: absolute;
+    width: 100px;
   }
 }

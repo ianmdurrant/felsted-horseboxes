@@ -30,7 +30,7 @@ body {
       top: 0;
     }
 
-    &.pink {
+    &.green {
       background-color: $primary-color;
       color: $white;
     }
@@ -39,6 +39,11 @@ body {
       background-color: transparent;
       border: 1px solid $white;
       color: $white;
+    }
+
+    &.white {
+      background-color: $white;
+      color: $primary-color;
     }
 
     &.noarrow {
@@ -51,7 +56,7 @@ body {
   }
 
   .button:hover {
-    background-color: $dark-gray;
+    background-color: $black;
     color: $white;
 
     &.black {
@@ -62,7 +67,7 @@ body {
 
     &.trans {
       background-color: $white;
-      color: $black;
+      color: $primary-color;
     }
   }
 }
@@ -127,12 +132,8 @@ body {
 }
 
 .content.testimonials {
-  background: $dark-gray;
+  background: $primary-color;
   padding: 2rem 0;
-
-  .grid-x {
-    padding-top: 2rem;
-  }
 
   h3 {
     font-size: 2.75rem;
@@ -140,7 +141,6 @@ body {
   }
 
   blockquote {
-    margin: 0 0 1rem;
     padding: 1rem;
     border: none;
 
@@ -157,7 +157,7 @@ body {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.2;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
 
     @include breakpoint (medium down) {
       font-size: 0.8rem;
@@ -199,7 +199,7 @@ cite.company {
   }
 }
 
-.content.whichservice {
+.content.vehicletype {
   padding-top: 2rem;
 
   .whichgrid {
@@ -217,26 +217,36 @@ cite.company {
         max-width: 460px;
         margin-bottom: 1rem;
       }
-      
+
       @include breakpoint(small only) {
         margin-bottom: 1rem;
       }
 
-      .service-image {
+      .vehicle-image {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         height: 0;
-        margin-bottom: 1rem;
         padding-top: 70%;
       }
 
-      h4,
-      h4 a {
+      h4 {
+        background-color: $primary-color;
+        color: $white;
         font-size: 1rem;
         letter-spacing: 0.1rem;
+        padding: 1rem;
         text-transform: uppercase;
         margin-bottom: 0;
+
+        &:hover {
+          background-color: $black;
+          color: $white;
+        }
+
+        & a {
+          color: $white;
+        }
       }
 
       .service-text {
@@ -246,108 +256,70 @@ cite.company {
   }
 }
 
-.content.clients {
-  padding-top: 3rem;
+.content.craftsmanship {
+  background-color: $primary-color;
+  color: $white;
+  padding: 0;
+
+  .text {
+    padding: 3rem 0;
+  }
+
+  .image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 320px;
+  }
+}
+
+.content.horseboxes,
+.content.services {
+
+  .medium-6:first-child {
+    border-right: 1px solid $primary-color;
+
+    @include breakpoint(small down) {
+      border: none;
+    }
+  }
+
+  h2 {
+    color: $primary-color;
+    text-transform: uppercase;
+  }
 }
 
 .section-header {
   position: relative;
   text-align: center;
+  text-transform: uppercase;
   width: 100%;
 
-  &::before {
-    border-top: 1px solid $black;
-    content: " ";
-    left: 0;
-    position: absolute;
-    top: 50%;
-    width: 100%;
-  }
-
   h2 {
-    background-color: $white;
-    display: inline-block;
-    font-size: 2rem;
-    letter-spacing: 0.2rem;
-    margin: 0;
-    padding: 0 1rem;
-    position: relative;
-  }
-}
-
-.section-header-forblack {
-  position: relative;
-  text-align: center;
-  width: 100%;
-
-  &::before {
-    border-top: 1px solid $white;
-    content: " ";
-    left: 0;
-    position: absolute;
-    top: 1rem;
-    width: 100%;
+    color: $primary-color;
   }
 
-  h2 {
-    background-color: $black;
+  &.white {
+
+    h2 {
     color: $white;
-    display: inline-block;
-    font-size: 2rem;
-    letter-spacing: 0.2rem;
-    margin: 0;
-    padding: 0 1rem;
-    position: relative;
+    }
   }
-}
-
-.section-header-fordkgray {
-  position: relative;
-  text-align: center;
-  width: 100%;
-
-  &::before {
-    border-top: 1px solid $white;
-    content: " ";
-    left: 0;
-    position: absolute;
-    top: 50%;
-    width: 100%;
-  }
-
-  h2 {
-    background-color: $dark-gray;
-    color: $white;
-    display: inline-block;
-    font-size: 2rem;
-    letter-spacing: 0.2rem;
-    margin: 0;
-    padding: 0 1rem;
-    position: relative;
-  }
-}
-
-.clients .grid-container {
-  padding-top: 2rem;
-}
-
-.testimonials .grid-container {
-  position: relative;
-  z-index: 6;
 }
 
 .owl-carousel button.owl-dot {
-  background: $white;
+  background: transparent;
+  border: 1px solid $white;
   border-radius: 100%;
-  height: 15px;
+  height: 12px;
   margin: 5px;
-  width: 15px;
+  width: 12px;
 
   &.active {
-    background: transparent;
-    border: 1px solid $white;
-    height: 16px;
-    width: 16px;
+    background: $white;
+    height: 12px;
+    width: 12px;
   }
 }
 
