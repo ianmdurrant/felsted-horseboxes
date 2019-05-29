@@ -1,0 +1,37 @@
+<%= content_for :page_title, @page.seo_title %>
+<%= content_for :page_description, @page.description %>
+<%= content_for :body_classes, "services-page" %>
+
+<div class="content" style="padding-top: 150px;">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+
+      <div class="cell large-12">
+        <h1><%= @page.title %></h1>
+        <%= content(:text).try(:html_safe) %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content whichservice">
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x whichgrid align-spaced">
+
+      <% @page.children.each do |child_page| %>
+        <div class="cell medium-12 large-4 text-center">
+            <div class="service-image" style="background-image: url(<%= main_app.url_for(child_page.content(:image).variant(resize: "1280x720")) if child_page.content(:image).present? %>);"></div>
+
+          <h4><%= link_to child_page.title, child_page.materialized_path %></h4>
+
+          <div class="service-text"><%= truncate(strip_tags(child_page.content(:text).try(:html_safe)), length: 64) %></div>
+
+          <div class="column align-self-bottom"><%= link_to 'Find out more', child_page.materialized_path, :class => "button pink" %></div>
+
+        </div>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<header class="header">
+  <div class="header__main">
+
+    <div class="top-bar">
+
+      <div class="top-bar-title hide-for-small-only">
+        <%= link_to spina.root_path, class: "header__logo" do %>
+          <span class="first hide-for-medium"></span>
+          <span class="second"><%= current_account.name %></span>
+        <% end %>
+      </div>
+      <div class="top-bar-left">
+        <ul class="menu show-for-medium align-right" data-dropdown-menu>
+
+              <%= render partial: "default/shared/navigation" %>
+
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu dropdown" data-dropdown-menu>
+          <li class="show-for-medium teleno">
+            <a href="tel:<%= current_account.phone %>">T: <%= current_account.phone %></a>
+          </li>
+          <li class="show-for-small-only">
+            <div class="top-bar-title">
+              <%= link_to spina.root_path, class: "header__logo" do %>
+                <span class="second"></span>
+              <% end %>
+            </div>
+          </li>
+          <li class="show-for-small hide-for-large">
+            <span class="offcanvas-menu-link" data-toggle="offCanvas">
+              <button class="offcanvas-menu-link__icon menu-icon" type="button"></button>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

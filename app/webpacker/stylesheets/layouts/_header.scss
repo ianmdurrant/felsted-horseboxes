@@ -1,0 +1,278 @@
+.header {
+  height:60px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+
+  &__main {
+    background-color: $white;
+    padding: 0;
+
+    @include breakpoint(small down) {
+      padding: 0;
+    }
+
+    .top-bar-title {
+      text-align: left;
+
+      @include breakpoint(medium down) {
+        height: 60px;
+      }
+    }
+  }
+
+  &__logo {
+    display: flex;
+    margin-left: 2rem;
+
+    @include breakpoint(small down) {
+      margin-left: 0;
+    }
+
+    .first {
+      // background-image: url('images/');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 60px;
+      display: flex;
+      height: 60px;
+      padding: 1rem;
+      width: 60px;
+    }
+
+    .second {
+      // background-image: url('images/');
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: contain;
+      display: flex;
+      height: 60px;
+      padding: 0;
+      text-indent: -9999px;
+      width: 185px;
+    }
+  }
+
+  &__icon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .menu a {
+    color: $black;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    padding: 0;
+    text-transform: uppercase;
+    transition: color 0.25s ease-out;
+
+    @include breakpoint(medium down) {
+      display: none;
+    }
+
+    &.button {
+      font-weight: $global-weight-bold;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  .menu {
+    padding: 0 2rem;
+
+    @include breakpoint(medium down) {
+      padding: 0;
+    }
+  }
+
+  .menu li {
+    padding: 0 1rem;
+  }
+
+  .menu li.active a {
+    color: $medium-gray;
+  }
+
+  .menu li:hover a {
+    color: $primary-color;
+  }
+
+  .menu li.active a ul.submenu li a {
+    color: $white;
+  }
+}
+
+.menu-telephone {
+  // background-image: url("images/");
+  background-size: 22px;
+  background-position: left 1rem center;
+  background-repeat: no-repeat;
+  color: $secondary-color;
+  display: block;
+  font-weight: $global-weight-bold;
+  padding: 0.5rem 1rem 0.5rem 3rem;
+
+  @include breakpoint(small down) {
+    display: none;
+  }
+
+  &__title {
+    display: block;
+    font-size: rem-calc(16px);
+    line-height: 1;
+  }
+
+  &__number {
+    display: block;
+    font-size: rem-calc(18px);
+    line-height: 1;
+  }
+}
+
+.top-bar {
+  border-bottom: 1px solid #e73c8433;
+}
+
+.top-bar .top-bar-right {
+  background-color: $primary-color;
+  height: 60px;
+
+    @include breakpoint(medium down) {
+      background-color: $white;
+    }
+
+    .teleno {
+      color: $white;
+      line-height: 20px;
+
+      @include breakpoint(medium down) {
+        display: none;
+      }
+    }
+
+    .teleno a {
+      color: $white;
+      line-height: 60px;
+      padding: 0;
+      text-transform: none;
+
+      &:hover {
+        color: $dark-gray;
+      }
+    }
+  }
+
+.offcanvas-menu-link {
+  display: flex;
+  height: 60px;
+  line-height: 60px;
+  padding: 20px;
+  width: 60px;
+
+  &__text {
+    color: $primary-color;
+    font-weight: $global-weight-bold;
+    margin-left: 0.5rem;
+    text-transform: uppercase;
+  }
+}
+
+.menu-icon:hover::after {
+    background: $black;
+    box-shadow: 0 7px 0 $black, 0 14px 0 $black !important;
+}
+
+.off-canvas {
+  background: rgb(26,26,24);
+  padding-top: 2rem;
+
+  .menu {
+
+    li a {
+      color: $white;
+      font-size: 1.25rem;
+      transition: color 0.25s ease-out;
+    }
+
+    li a:hover {
+      color: $medium-gray;
+    }
+
+    li.active a {
+      color: $medium-gray;
+      background: none;
+    }
+
+    .menu {
+      padding-left: 1.5rem;
+    }
+  }
+
+  .button {
+    font-weight: $global-weight-bold;
+    text-align: center;
+    width: 16px;
+    height:16px;
+
+    &:after {
+      border: 0;
+    }
+  }
+}
+
+.menu.dropdown li.show-for-small-only {
+
+  @include breakpoint(small down) {
+    width: calc(100% - 60px);
+  }
+  a {
+    display:inline-block;
+  }
+  .second {
+    height: 40px;
+    margin-top: 10px;
+  }
+}
+
+.menu.dropdown li.show-for-small {
+  border-left: none;
+  padding:0;
+
+  @include breakpoint(medium down) {
+    width:60px;
+  }
+}
+
+.is-dropdown-submenu {
+  min-width: 240px;
+  padding: 0.5rem 1rem !important;
+  position: absolute;
+  top: 36px;
+  left: 0 !important;
+
+  li {
+    border-left: none !important;
+    padding: 0.5rem 0 !important;
+  }
+
+  li.is-submenu-item a {
+    color: $white !important;
+  }
+}
+
+.off-canvas {
+    background: $black !important;
+  }
+
+.off-canvas-content.is-open-right {
+  position: relative;
+  top:-60px;
+}

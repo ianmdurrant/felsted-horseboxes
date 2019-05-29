@@ -1,0 +1,108 @@
+<%= content_for :page_title, @page.seo_title %>
+<%= content_for :page_description, @page.description %>
+<%= content_for :body_classes, "home-page" %>
+
+<div class="banner" style="background-image: url(<%= main_app.url_for(@page.content(:banner).variant(resize: "1280x720")) if content(:banner).present? %>);">
+  <div class="banner__content">
+    <div class="grid-container">
+      <div class="grid-x align-center">
+        <div class="cell large-8 text-center">
+          <%= content(:banner_title).try(:html_safe) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content banner-services-grid align-center">
+  <div class="banner-services grid-container align-center text-center">
+    <div class="grid-x row">
+      <div class="cell medium-4 text-center banner-service">
+        <div class="service">Office Spaces</div>
+      </div>
+      <div class="cell medium-4 text-center banner-service">
+        <div class="service">Domestic Cleaning</div>
+      </div>
+      <div class="cell medium-4 text-center banner-service">
+        <div class="service">End of Tenancy Cleaning</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="content">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+
+      <div class="cell large-6">
+        <%= content(:text).try(:html_safe) %>
+      </div>
+      <div class="cell large-6 content-image" style="background-image: url(<%= main_app.url_for(@page.content(:image).variant(resize: "1280x720")) if content(:image).present? %>);">
+        &nbsp;
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content whichservice">
+  <div class="section-header"><h2>WHICH CLEANING SERVICE<br />DO YOU NEED?</h2></div>
+  <div class="grid-container">
+    <div class="grid-x row align-spaced whichgrid">
+      <div class="cell medium-12 large-4 text-center">
+        <div class="service-image" style="">&nbsp;</div>
+        <h4><%= link_to 'commercial cleaning', '/our-services/commercial-cleaning' %></h4>
+        <div class="service-text"><%= content(:commercial_text).try(:html_safe) %></div>
+        <a href="/our-services/commercial-cleaning" class="button pink">Find out more</a>
+      </div>
+      <div class="cell medium-12 large-4 text-center">
+        <div class="service-image" style="">&nbsp;</div>
+        <h4><%= link_to 'domestic cleaning', '/our-services/domestic-cleaning' %></h4>
+        <div class="service-text"><%= content(:domestic_text).try(:html_safe) %></div>
+        <a href="/our-services/domestic-cleaning" class="button pink">Find out more</a>
+      </div>
+      <div class="cell medium-12 large-4 text-center">
+        <div class="service-image" style="">&nbsp;</div>
+        <h4><%= link_to 'end of tenancy', '/our-services/end-of-tenancy' %></h4>
+        <div class="service-text"><%= content(:tenancy_text).try(:html_safe) %></div>
+        <a href="/our-services/end-of-tenancy" class="button pink">Find out more</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content clients">
+  <div class="section-header"><h2>CLIENTS WE'VE WORKED WITH</h2></div>
+  <div class="grid-container">
+    <div class="grid-x align-center">
+
+    </div>
+  </div>
+</div>
+
+<div class="content testimonials">
+  <div class="section-header"><h2>REVIEWS</h2></div>
+  <div class="grid-container">
+    <div class="grid-x align-center-middle">
+          <% @page.content(:testimonials).structure_items.sorted_by_structure.first(3).each do |testimonials| %>
+            <div class="cell medium-4 text-center">
+              <blockquote class="testimonial">
+                <cite class="author"><%= testimonials.content(:author) %></cite>
+                <cite class="company"><%= testimonials.content(:company) %></cite>
+                <%= image_pack_tag '5star.svg' %>
+                <%= testimonials.content(:testimonial).try(:html_safe) %>
+              </blockquote>
+            </div>
+          <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="content clients">
+  <div class="section-header"><h2>WANT ONE OF OUR SERVICES?</h2></div>
+  <div class="grid-container">
+    <div class="grid-x row align-center">
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<% Spina::Page.roots.in_menu.live.sorted.each do |page| %>
+  <li class= "<%= 'active' if page == @page %>">
+    <%= link_to page.title, page.materialized_path %>
+    <% if page.has_children? %>
+      <ul class="menu submenu vertical">
+        <% page.children.in_menu.live.sorted.each do |sub_page| %>
+          <li class="<% 'active' if current_page?(@page.materialized_path) %>">
+            <%= link_to sub_page.menu_title, sub_page.materialized_path %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </li>
+<% end %>

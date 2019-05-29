@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= current_account.name %> - <%= content_for(:page_title) %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= canonical_tag %>
+    <%= tag :meta, name: "viewport", content: "width=device-width, initial-scale=1.0" %>
+    <%= tag :meta, "http-equiv" => "x-ua-compatible", content: "ie=edge" %>
+    <%= tag :meta, name: "description", content: content_for(:page_description) %>
+    <%= tag :meta, name: "google-site-verification", content: current_account.try(:google_site_verification) %>
+    <%= stylesheet_pack_tag "application", "data-turbolinks-track": "reload", media: "all" %>
+    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload", defer: true %>
+    <%= favicon_link_tag '/favicon.ico', type: 'image/x-icon' %>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', '<%= current_account.google_analytics %>', 'auto');
+
+      document.addEventListener("turbolinks:load", function(event) {
+        if (typeof ga === "function") {
+          ga("set", "location", event.data.url);
+          ga("send", "pageview");
+        }
+      });
+    </script>
+  </head>
+  <body class="no-js <%= content_for(:body_classes) %>">
+    <div class="off-canvas position-right" id="offCanvas" data-off-canvas>
+      <%= render partial: "layouts/mobile-menu" %>
+    </div>
+    <div class="off-canvas-content" data-off-canvas-content>
+      <%= render partial: "layouts/header" %>
+      <%= yield %>
+      <%= render partial: "layouts/footer" %>
+    </div>
+  </body>
+</html>

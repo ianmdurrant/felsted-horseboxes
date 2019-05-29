@@ -1,0 +1,12 @@
+<%= simple_form_for @inquiry, html: { autocomplete: 'off' } do |f| %>
+  <%= f.invisible_captcha :spam %>
+  <%= f.input :name, placeholder:'Your name', label: false %>
+  <%= f.input :email, placeholder: 'Your e-mail', label: false %>
+  <%= f.input :phone, placeholder: 'Your contact number', label: false %>
+  <%= f.input :message, input_html: { rows: 4 }, placeholder: 'Inquiry', label: false %>
+  <div class="text-right">
+    <div class="button pink submit">
+      <%= f.submit "Send" %>
+    </div>
+  </div>
+<% end %>

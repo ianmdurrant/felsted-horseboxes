@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@rails/webpacker": "^4.0",
+    "activestorage": "^5.2.1",
+    "foundation-sites": "^6.5.0",
+    "jquery": "^3.3.1",
+    "owl.carousel": "^2.3.4",
+    "rails-ujs": "^5.2.1",
+    "resolve-url-loader": "^3.0.0",
+    "turbolinks": "^5.2.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.2.1"
+  }
+}

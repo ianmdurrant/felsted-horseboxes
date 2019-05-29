@@ -1,0 +1,45 @@
+.sidebar {
+  padding-top: 2rem;
+
+  h3 {
+    padding-bottom: 1rem;
+  }
+}
+
+.button {
+  background-color: transparent;
+  font-weight: 400;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+
+  &.submit {
+  padding: 0;
+  padding-right: 0 !important;
+
+    input[type="submit"] {
+      padding: 1rem 2rem;
+      border: 0;
+      box-shadow: 0;
+      color: $white;
+      background-color: transparent;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    input[type="submit"]:hover {
+      color: $white;
+      background-color: $black;
+      cursor: pointer;
+    }
+    &:after {
+      z-index: -1;
+    }
+  }
+}
+
+.contact-page .content {
+
+  .inner-banner {
+    padding-top: 0;
+  }
+}

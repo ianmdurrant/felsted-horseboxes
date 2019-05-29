@@ -1,0 +1,29 @@
+<%= content_for :page_title, @article.title %>
+<%= content_for :page_description, @article.teaser %>
+<%= content_for :body_classes, "article-show-page" %>
+
+<div class="banner light">
+  <div class="banner__content">
+    <div class="grid-container">
+      <div class="grid-x">
+        <div class="cell medium-6">
+          <h1><%= @article.title %></h1>
+          <p><%= @article.teaser %></p>
+        </div>
+        <div class="cell medium-6">
+          <%= content_tag :div, class: "article-block", style: "background-image: url(#{main_app.url_for(@article.image.variant(resize: "1280x720")) if @article.image.present?});" do %>
+            <%= image_tag main_app.url_for(@article.image.variant(resize: "800x800")), class: "banner__image" if @article.image.present? %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="grid-container">
+    <div class="grid-x medium-up-2 grid-padding-x grid-padding-y">
+      <%= @article.body.html_safe %>
+    </div>
+  </div>
+</div>

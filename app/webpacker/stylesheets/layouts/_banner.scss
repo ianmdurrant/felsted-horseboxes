@@ -1,0 +1,226 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: $black;
+  color: $white;
+  height: 480px;
+  padding: 3rem 0;
+  margin-top: 60px;
+  position: relative;
+  transition: background-color 0.25s ease-out;
+
+  @include breakpoint(small down) {
+    margin-top: 60px;
+  }
+
+  @include breakpoint(large) {
+    height: 560px;
+  }
+
+  @include breakpoint(xlarge) {
+    height: 640px;
+  }
+
+  &.solid {
+    height: 200px;
+
+    &:before {
+      content: none;
+    }
+  }
+
+  &.light {
+    background: $light-gray;
+    color: $primary-color;
+    height: 400px;
+    position: relative;
+
+    &:before {
+      content: none;
+    }
+  }
+
+  &:before {
+    background: rgba($black, 0.5);
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: background-color 0.25s ease-out;
+    width: 100%;
+    z-index: 5;
+  }
+
+  &__image {
+    display: block;
+    height: 100%;
+    margin-top: -3rem;
+  }
+
+  &__content {
+    @include vertical-center;
+    position: relative;
+    z-index: 10;
+
+    @include breakpoint(medium down) {
+      .home-page & {
+        @include vertical-center;
+        text-align: center;
+        width: 100%;
+      }
+
+      .services-page & {
+        @include vertical-center;
+        width: 100%;
+      }
+
+      .about-page & {
+        @include vertical-center;
+        width: 100%;
+      }
+    }
+
+    h1,
+    h2 {
+      font-weight: 600;
+      letter-spacing: 0.5rem;
+      text-transform: uppercase;
+
+      @include breakpoint(large) {
+        font-size: rem-calc(64px);
+        line-height: rem-calc(96px);
+      }
+
+      @include breakpoint(medium) {
+        font-size: rem-calc(48px);
+        line-height: rem-calc(72px);
+      }
+
+      @include breakpoint(small) {
+        font-size: rem-calc(32px);
+        line-height: rem-calc(48px);
+      }
+    }
+
+    h2 {
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: rem-calc(64px);
+      line-height: rem-calc(56px);
+      font-weight: 600;
+      text-transform: uppercase;
+
+      @include breakpoint(small down) {
+        font-size: rem-calc(48px);
+        line-height: rem-calc(36px);
+      }
+    }
+
+    h4 {
+      font-size: rem-calc(48px);
+      line-height: rem-calc(48px);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    h2 em,
+    h3 em {
+      font-size: 70%;
+      font-style: normal;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+    h4 em {
+      font-style: normal;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.banner--small {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: $black;
+  color: $white;
+  height: 480px;
+  padding: 3rem 0;
+  position: relative;
+  transition: background-color 0.25s ease-out;
+
+  &:before {
+    background: rgba($black, 0.66);
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: background-color 0.25s ease-out;
+    width: 100%;
+    z-index: 5;
+  }
+
+  @include breakpoint(small) {
+    height: 280px;
+  }
+
+  @include breakpoint(large) {
+    height: 280px;
+  }
+
+  @include breakpoint(xlarge) {
+    height: 320px;
+  }
+}
+
+.content.banner-services-grid {
+  background-color: $light-gray;
+  // border-bottom: 1px solid $black;
+  bottom: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+  position: relative;
+  width:100%;
+  z-index: 9;
+}
+
+.banner-services {
+  display: block;
+  max-width: 75rem;
+  width: 100%;
+
+  @include breakpoint(small down) {
+    padding: 1rem 0;
+}
+
+  .banner-service {
+    border-right: 1px solid $black;
+
+    @include breakpoint(small down) {
+      border-right: none;
+
+      .button {
+
+        @include breakpoint(small down) {
+          margin: 0;
+      }
+    }
+  }
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+}

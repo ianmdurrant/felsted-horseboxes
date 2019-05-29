@@ -1,0 +1,70 @@
+<%= content_for :page_title, @page.seo_title %>
+<%= content_for :page_description, @page.description %>
+<%= content_for :body_classes, "contact-page" %>
+
+<div class="content toppadding">
+  <div class="grid-container">
+    <div class="grid-x">
+
+      <div class="cell large-6">
+        <div class="banner inner-banner">
+          <div class="banner__content">
+            <div class="cell large-6">
+              <p><%= content(:text).try(:html_safe) %></p>
+
+              <div class="grid-x footer">
+                <div class="cell large-6 contactdetails">
+                  <h4>CONTACT US</h4>
+                  <div>
+                    <p><a href="tel:<%= current_account.phone %>">T: <%= current_account.phone %></a><br />
+                      <a href="tel:+447891382420">M: 07891 382420</a><br />
+                    <a href="mailto:<%= current_account.email %>"><%= current_account.email %></a></p>
+                  </div>
+                </div>
+                <div class="cell large-6 contactdetails">
+                  <h4>FOLLOW US</h4>
+                  <ul class="menu footer__social">
+                    <li>
+                      <%= link_to (image_pack_tag 'facebook-white.svg'), current_account.facebook %>
+                    </li>
+                    <li>
+                      <%= link_to (image_pack_tag 'instagram-white.svg'), current_account.instagram %>
+                    </li>
+                    <li>
+                      <%= link_to (image_pack_tag 'twitter-white.svg'), current_account.twitter %>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cell large-6">
+        <div class="banner inner-banner">
+          <div class="banner__content text-center">
+            <div class="cell large-6">
+              contact form<br />
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="content testimonials" style="background-image: url('/packs/media/images/party-setting-c2010acb0c58109e1703b2ad161ecc94.jpg');">
+  <div class="grid-container">
+    <div class="grid-x">
+
+      <div class="cell large-8 large-offset-2 text-center">
+        <h3>READY TO MAKE A BOOKING?</h3>
+        <a href="/contact" class="button trans">Get your free quote today</a>
+      </div>
+
+    </div>
+  </div>
+</div>

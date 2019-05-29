@@ -1,0 +1,26 @@
+<%= content_for :page_title, @page.seo_title %>
+<%= content_for :page_description, @page.description %>
+
+<div class="content" style="padding-top: 150px;">
+  <div class="grid-container">
+    <div class="grid-x">
+      <div class="cell large-3">
+        <h1><%= @page.title %></h1>
+        <%= @page.content(:text).try(:html_safe) %>
+        <div class="sidebar">
+          <%= render partial: "layouts/flash" if flash.any? %>
+          <p>
+            <a href="tel:<%= current_account.phone %>" class="h5"><%= current_account.phone %></a></br>
+            <a href="mailto:<%= current_account.email %>" class="h5"><%= current_account.email %></a>
+          </p>
+          <p>
+            <%= current_account.address %> <%= current_account.city%> <%= current_account.postal_code %>
+          </p>
+        </div>
+      </div>
+      <div class="cell large-7 large-offset-2">
+        <%= render partial: "spina/inquiries/form" %>
+      </div>
+    </div>
+  </div>
+</div>
