@@ -231,21 +231,23 @@ cite.company {
       }
 
       h4 {
-        background-color: $primary-color;
-        color: $white;
-        font-size: 1rem;
-        letter-spacing: 0.1rem;
-        padding: 1rem;
-        text-transform: uppercase;
         margin-bottom: 0;
 
-        &:hover {
-          background-color: $black;
+        a {
+          background-color: $primary-color;
           color: $white;
-        }
+          display: block;
+          font-size: 1rem;
+          letter-spacing: 0.1rem;
+          padding: 1rem;
+          text-transform: uppercase;
+          margin-bottom: 0;
+          width: 100%;
 
-        & a {
-          color: $white;
+          &:hover {
+            background-color: $black;
+            color: $white;
+          }
         }
       }
 

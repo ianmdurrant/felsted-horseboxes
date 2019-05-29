@@ -54,7 +54,7 @@
     z-index: 10;
 
     &:before {
-      background: rgba($black, 0.5);
+      background: rgba($black, 0.65);
       bottom: 0;
       content: '';
       display: block;
@@ -164,7 +164,7 @@
 
     li a {
       color: $white;
-      font-size: 0.85rem;
+      font-size: 1rem;
       padding: 0.25rem 0.5rem;
     }
   }
@@ -211,7 +211,7 @@
 
 .banner-logo img {
   margin-bottom: 1rem;
-  max-width: 320px;
+  max-width: 360px;
 }
 
 .downarrow {
