@@ -5,10 +5,12 @@
 <div class="content" style="padding-top: 150px;">
   <div class="grid-container">
     <div class="grid-x grid-padding-x">
-      <div class="cell large-6">
-        <h1 class="page-title"><%= @page.title %></h1>
-        <%= content(:text).try(:html_safe) %><br />
-        <%= link_to 'Visit our services', '#', class: 'button green' %>
+      <div class="cell large-6 grid-x align-left">
+        <div class="cell large-10 grid-x text-left">
+          <h1 class="page-title"><%= @page.title %></h1>
+          <%= content(:text).try(:html_safe) %>
+          <%= link_to 'Visit our services', '#', class: 'button green' %>
+        </div>
       </div>
       <div class="cell large-6">
         <% if content(:image).present? %>

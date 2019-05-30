@@ -26,6 +26,10 @@
     title: 'Services',
     page_parts: ['text', 'image']
   }, {
+    name: 'services_item',
+    title: 'Service Item',
+    page_parts: ['text', 'image']
+  }, {
     name: 'contact',
     title: 'Contact',
     page_parts: ['image', 'text']

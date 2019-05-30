@@ -5,29 +5,45 @@
 <div class="content" style="padding-top: 150px;">
   <div class="grid-container">
     <div class="grid-x grid-padding-x">
+      <div class="cell large-6 grid-x align-left">
+        <div class="cell large-10 grid-x text-left">
+          <h1 class="page-title"><%= @page.title %></h1>
+          <%= content(:text).try(:html_safe) %>
+        </div>
+      </div>
+      <div class="cell large-6 grid-y services-mini">
+        <% @page.children.each do |child_page| %>
 
-      <div class="cell large-12">
-        <h1><%= @page.title %></h1>
-        <%= content(:text).try(:html_safe) %>
+          <div class="cell large-4 text-center">
+            <%= link_to child_page.materialized_path do %>
+              <div class="service-block" style="background-image: url(<%= main_app.url_for(child_page.content(:image).variant(resize: "1280x720")) if child_page.content(:image).present? %>);">
+                <div class="service-heading text-center">
+                  <h4><%= child_page.title %></h4>
+                </div>
+              </div>
+            <% end %>
+          </div>
+
+        <% end %>
       </div>
     </div>
   </div>
 </div>
 
-<div class="content whichservice">
+<div class="content services">
   <div class="grid-container">
-    <div class="grid-x grid-margin-x whichgrid align-spaced">
+    <div class="grid-x grid-margin-x align-center">
 
       <% @page.children.each do |child_page| %>
-        <div class="cell medium-12 large-4 text-center">
-            <div class="service-image" style="background-image: url(<%= main_app.url_for(child_page.content(:image).variant(resize: "1280x720")) if child_page.content(:image).present? %>);"></div>
 
-          <h4><%= link_to child_page.title, child_page.materialized_path %></h4>
-
-          <div class="service-text"><%= truncate(strip_tags(child_page.content(:text).try(:html_safe)), length: 64) %></div>
-
-          <div class="column align-self-bottom"><%= link_to 'Find out more', child_page.materialized_path, :class => "button pink" %></div>
-
+        <div class="cell large-4 text-center">
+          <%= link_to child_page.materialized_path do %>
+            <div class="service-block" style="background-image: url(<%= main_app.url_for(child_page.content(:image).variant(resize: "1280x720")) if child_page.content(:image).present? %>);">
+              <div class="service-heading text-center">
+                <h4><%= child_page.title %></h4>
+              </div>
+            </div>
+          <% end %>
         </div>
 
       <% end %>
