@@ -1,0 +1,52 @@
+.hb-sub-nav {
+  background-color: $light-gray;
+  padding: 1rem 0 !important;
+
+  hb-btn {
+    width: 100%;
+  }
+}
+
+.horseboxes {
+
+  .grid-x {
+    padding-bottom: 2rem;
+  }
+
+  .medium-6 {
+    border: none !important;
+  }
+
+  h2 {
+    background-color: $primary-color;
+    color: $white !important;
+    line-height: 2rem;
+    margin-bottom: 0;
+    padding: 0.5rem;
+  }
+
+  h3 {
+    background-color: $light-gray;
+    color: $primary-color;
+    font-size: 1rem;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .horseboxes-text {
+    margin: 2rem 0;
+  }
+
+  .horseboxes-image {
+    background-color: $light-gray;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 0;
+    margin-bottom: 1rem;
+    padding-top: 66%;
+  }
+
+}

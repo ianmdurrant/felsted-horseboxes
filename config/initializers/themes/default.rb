@@ -6,6 +6,7 @@
     { name: 'text', title: 'Text', partable_type: 'Spina::Text' },
     { name: 'horseboxes_text', title: 'Horseboxes Text', partable_type: 'Spina::Text' },
     { name: 'services_text', title: 'Services Text', partable_type: 'Spina::Text' },
+    { name: 'horseboxes_price', title: 'Price', partable_type: 'Spina::Line' },
     { name: 'image', title: 'Image', partable_type: 'Spina::Image' },
     { name: 'image_collection', title: 'Image Collection', partable_type: 'Spina::ImageCollection' },
     { name: 'banner', title: 'Banner Image', partable_type: 'Spina::Image' },
@@ -29,6 +30,14 @@
     name: 'services_item',
     title: 'Service Item',
     page_parts: ['text', 'image']
+  }, {
+    name: 'horseboxes',
+    title: 'Horseboxes',
+    page_parts: ['text', 'image']
+  }, {
+    name: 'horseboxes_item',
+    title: 'Horseboxes Item',
+    page_parts: ['text', 'image', 'horseboxes_price']
   }, {
     name: 'contact',
     title: 'Contact',
