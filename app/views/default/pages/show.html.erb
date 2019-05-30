@@ -6,7 +6,7 @@
   <div class="grid-container">
     <div class="grid-x grid-padding-x">
       <div class="cell large-6 grid-x align-left">
-        <div class="cell large-10 grid-x text-left">
+        <div class="cell large-10 text-left">
           <h1 class="page-title"><%= @page.title %></h1>
           <%= content(:text).try(:html_safe) %>
           <%= link_to 'Visit our services', '#', class: 'button green' %>
