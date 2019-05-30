@@ -95,6 +95,7 @@
 
     .service-heading {
       display: block;
+      padding: 0.5rem;
       position: absolute;
       text-align: center;
       text-transform: uppercase;
@@ -106,6 +107,10 @@
         color: $white;
         font-size: 1.6rem;
         line-height: 2rem;
+
+        @include breakpoint(medium down) {
+          font-size: 1.2rem;
+        }
       }
     }
   }
