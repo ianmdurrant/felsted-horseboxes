@@ -1,11 +1,12 @@
 <%= content_for :page_title, @page.seo_title %>
 <%= content_for :page_description, @page.description %>
+<%= content_for :body_classes, "contact-us-page" %>
 
 <div class="content" style="padding-top: 150px;">
   <div class="grid-container">
-    <div class="grid-x">
-      <div class="cell large-3">
-        <h1><%= @page.title %></h1>
+    <div class="grid-x grid-margin-x">
+      <div class="cell large-6">
+        <h1 class="page-title"><%= @page.title %></h1>
         <%= @page.content(:text).try(:html_safe) %>
         <div class="sidebar">
           <%= render partial: "layouts/flash" if flash.any? %>
@@ -18,7 +19,7 @@
           </p>
         </div>
       </div>
-      <div class="cell large-7 large-offset-2">
+      <div class="cell large-6">
         <%= render partial: "spina/inquiries/form" %>
       </div>
     </div>

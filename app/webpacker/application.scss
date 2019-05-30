@@ -64,6 +64,7 @@ div.error textarea {
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
   position: relative;
+  text-transform: uppercase;
 
   &::after {
     border-bottom: 1px solid $primary-color;
