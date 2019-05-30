@@ -11,6 +11,10 @@
 
   .grid-x {
     padding-bottom: 2rem;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
 
   .medium-6 {
