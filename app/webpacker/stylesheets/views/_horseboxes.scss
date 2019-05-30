@@ -21,12 +21,14 @@
     border: none !important;
   }
 
+  h1,
   h2 {
     background-color: $primary-color;
     color: $white !important;
     line-height: 2rem;
     margin-bottom: 0;
-    padding: 0.5rem;
+    padding: 0.5rem 2rem;
+    width: 100%;
   }
 
   h3 {
@@ -34,9 +36,10 @@
     color: $primary-color;
     font-size: 1rem;
     line-height: 2rem;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
+    margin-bottom: 0;
+    padding: 0.5rem 2rem;
     text-transform: uppercase;
+    width: 100%;
   }
 
   .horseboxes-text {
@@ -52,5 +55,43 @@
     margin-bottom: 1rem;
     padding-top: 66%;
   }
+}
 
+.horseboxes-item {
+
+  .grid-x {
+    padding-bottom: 1.5rem;
+  }
+
+  h4 {
+    background-color: $primary-color;
+    color: $white;
+    font-size: 1rem;
+    line-height: 2rem;
+    margin-bottom: 0;
+    padding: 0.5rem 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+  }
+
+  .text-area{
+    background-color: $light-gray;
+    margin-bottom: 1.5rem;
+    padding: 1rem 2rem;
+
+    ul {
+      margin-bottom: 0;
+
+      li {
+        list-style: disc;
+      }
+    }
+  }
+}
+
+.enquiry {
+  background-color: $light-gray;
+  padding: 0.7rem;
+  width: 100%;
 }

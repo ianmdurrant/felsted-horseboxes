@@ -1,0 +1,37 @@
+<%= content_for :page_title, @page.seo_title %>
+<%= content_for :page_description, @page.description %>
+<%= content_for :body_classes, "horseboxes-page horseboxes-item" %>
+
+<div class="content horseboxes" style="padding-top: 150px;">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="cell medium-6 align-left">
+        <h1><%= @page.title %></h1>
+        <h3><%= content(:horseboxes_price) %></h3>
+      </div>
+      <div class="cell medium-6 text-center">
+        <div class="enquiry">
+          <%= link_to 'Make an enquiry', '#', class: 'button green' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-x grid-padding-x">
+      <div class="cell medium-6 align-left">
+        <h4>Description</h4>
+        <div class="text-area"><%= content(:text).try(:html_safe) %></div>
+        <h4>Key Features</h4>
+        <div class="text-area"><%= content(:key_features).try(:html_safe) %></div>
+      </div>
+      <div class="cell medium-6 text-left">
+        image/gallery
+        <% if content(:image).present? %>
+          <%= image_tag main_app.url_for(content(:image).variant(resize: "800x600")) %>
+        <% end %>
+        <h4>Optional Features</h4>
+        <div class="text-area"><%= content(:optional_features).try(:html_safe) %></div>
+      </div>
+    </div>
+
+  </div>
+</div>

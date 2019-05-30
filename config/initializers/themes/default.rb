@@ -7,6 +7,8 @@
     { name: 'horseboxes_text', title: 'Horseboxes Text', partable_type: 'Spina::Text' },
     { name: 'services_text', title: 'Services Text', partable_type: 'Spina::Text' },
     { name: 'horseboxes_price', title: 'Price', partable_type: 'Spina::Line' },
+    { name: 'key_features', title: 'Key Features', partable_type: 'Spina::Text' },
+    { name: 'optional_features', title: 'Optional Features', partable_type: 'Spina::Text' },
     { name: 'image', title: 'Image', partable_type: 'Spina::Image' },
     { name: 'image_collection', title: 'Image Collection', partable_type: 'Spina::ImageCollection' },
     { name: 'banner', title: 'Banner Image', partable_type: 'Spina::Image' },
@@ -37,7 +39,7 @@
   }, {
     name: 'horseboxes_item',
     title: 'Horseboxes Item',
-    page_parts: ['text', 'image', 'horseboxes_price']
+    page_parts: ['horseboxes_price', 'text', 'image', 'key_features', 'optional_features']
   }, {
     name: 'contact',
     title: 'Contact',
