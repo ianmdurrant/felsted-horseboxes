@@ -1,10 +1,18 @@
 .prefooter {
   background-color: $light-gray;
 
+  .grid-x {
+    padding-bottom: 0;
+  }
+
   h2 {
     color: $primary-color;
     font-size: 2rem;
     text-transform: uppercase;
+  }
+
+  .button {
+    margin-bottom: 0;
   }
 }
 
