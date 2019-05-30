@@ -1,0 +1,11 @@
+<%= content_for :page_title, @page.seo_title %>
+<%= content_for :page_description, @page.description %>
+<%= content_for :body_classes, "gallery-page" %>
+
+<div class="content" style="padding-top: 150px;">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <h1 class="page-title"><%= @page.title %></h1>
+    </div>
+  </div>
+</div>

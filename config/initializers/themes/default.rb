@@ -41,6 +41,10 @@
     title: 'Horseboxes Item',
     page_parts: ['horseboxes_price', 'text', 'image', 'key_features', 'optional_features']
   }, {
+    name: 'gallery',
+    title: 'Gallery',
+    page_parts: ['text', 'image']
+  }, {
     name: 'contact',
     title: 'Contact',
     page_parts: ['image', 'text']
