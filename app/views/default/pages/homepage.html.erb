@@ -49,7 +49,7 @@
       <div class="cell medium-5 grid-x">
         <div class="cell medium-10 text">
           <%= content(:text).try(:html_safe) %><br />
-          <%= link_to 'Find out more', '#', class: 'button trans' %>
+          <%= link_to 'Find out more', '/services', class: 'button trans' %>
         </div>
       </div>
       <div class="cell medium-7 image" style="background-image: url(<%= main_app.url_for(@page.content(:image).variant(resize: "1280x720")) if content(:image).present? %>);">
@@ -64,7 +64,7 @@
       <div class="cell medium-6 grid-x align-left">
         <div class="cell medium-10 text-left">
           <h2>High quality crafted horseboxes</h2>
-          <%= link_to 'Explore Our Horseboxes', '#', class: 'button green' %>
+          <%= link_to 'Explore Our Horseboxes', '/horseboxes', class: 'button green' %>
         </div>
       </div>
       <div class="cell medium-6 grid-x align-right">
@@ -109,7 +109,7 @@
       <div class="cell medium-6 grid-x align-left">
         <div class="cell medium-10 text-left">
           <h2>Our tailored range of services</h2>
-          <%= link_to 'Visit our services', '#', class: 'button green' %>
+          <%= link_to 'Visit our services', '/services', class: 'button green' %>
         </div>
       </div>
       <div class="cell medium-6 grid-x align-right">
