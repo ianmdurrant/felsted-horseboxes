@@ -24,10 +24,11 @@
         <div class="text-area"><%= content(:key_features).try(:html_safe) %></div>
       </div>
       <div class="cell medium-6 text-left">
-        image/gallery
-        <% if content(:image).present? %>
-          <%= image_tag main_app.url_for(content(:image).variant(resize: "800x600")) %>
-        <% end %>
+        <div class="hb-gallery">
+          <% if content(:image).present? %>
+            <%= image_tag main_app.url_for(content(:image).variant(resize: "800x600")) %>
+          <% end %>
+        </div>
         <h4>Optional Features</h4>
         <div class="text-area"><%= content(:optional_features).try(:html_safe) %></div>
       </div>
