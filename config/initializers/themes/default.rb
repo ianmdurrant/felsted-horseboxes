@@ -43,7 +43,7 @@
   }, {
     name: 'gallery',
     title: 'Gallery',
-    page_parts: ['text', 'image']
+    page_parts: ['text', 'image', 'image_collection']
   }, {
     name: 'contact',
     title: 'Contact',
