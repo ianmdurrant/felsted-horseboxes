@@ -17,10 +17,11 @@
 
 <div class="content" style="padding-top: 0;">
   <div class="grid-container">
-    <div class="grid-x grid-padding-x">
-      <div class="cell" id="myGallery">
+    <div class="grid-x grid-padding-x medium-up-3">
         <% content(:image_collection)&.images&.each do |image| %>
-          <%= image_tag main_app.url_for(image.variant(resize: "800x800")) %>
+          <div class="cell">
+            <%= image_tag main_app.url_for(image.variant(resize: "800x800")) %>
+          </div>
         <% end %>
       </div>
     </div>
