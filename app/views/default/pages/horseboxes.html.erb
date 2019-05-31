@@ -40,7 +40,7 @@
     <% @page.children.each do |child_page| %>
 
       <div class="grid-x grid-margin-x align-center-middle">
-        <div class="cell medium-6 text-center">
+        <div class="cell large-6 text-center">
 
           <h2><%= child_page.title %></h2>
           <h3><%= child_page.content(:horseboxes_price) %></h3>
@@ -54,7 +54,7 @@
           </div>
 
         </div>
-        <div class="cell medium-6 text-center">
+        <div class="cell large-6 text-center">
           <div class="horseboxes-image" style="background-image: url(<%= main_app.url_for(child_page.content(:image).variant(resize: "1280x720")) if child_page.content(:image).present? %>);"></div>
         </div>
       </div>
