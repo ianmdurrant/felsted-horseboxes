@@ -31,7 +31,7 @@
   }, {
     name: 'services_item',
     title: 'Service Item',
-    page_parts: ['text', 'image']
+    page_parts: ['text', 'image', 'image_collection']
   }, {
     name: 'horseboxes',
     title: 'Horseboxes',
