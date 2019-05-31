@@ -68,3 +68,12 @@ $(document).on("turbolinks:load", function() {
 
   }, 500);
 });
+
+function scrollToAnchor(aid){
+    var aTag = $("a[name='"+ aid +"']");
+    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+}
+
+$("#scroll").click(function() {
+   scrollToAnchor('horseboxes');
+});

@@ -223,4 +223,8 @@
   position: relative;
   transform: rotate(45deg);
   z-index: 7;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
