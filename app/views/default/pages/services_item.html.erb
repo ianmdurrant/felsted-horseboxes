@@ -1,0 +1,21 @@
+<%= content_for :page_title, @page.seo_title %>
+<%= content_for :page_description, @page.description %>
+<%= content_for :body_classes, "show-page" %>
+
+<div class="content" style="padding-top: 150px;">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="cell large-6 grid-x align-left">
+        <div class="cell large-10 text-left">
+          <h1 class="page-title"><%= @page.title %></h1>
+          <%= content(:text).try(:html_safe) %>
+        </div>
+      </div>
+      <div class="cell large-6">
+        <% if content(:image).present? %>
+          <%= image_tag main_app.url_for(content(:image).variant(resize: "800x600")) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
